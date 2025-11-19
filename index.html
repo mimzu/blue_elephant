@@ -9,6 +9,14 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <!--프리텐다드(v1.3.9) 웹글꼴 연결주소-->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"/>
+    <!-- lexend mega 웹글꼴 연결주소 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- lexend deca 웹글꼴 연결주소 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Mega:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -16,7 +24,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./style/main.css">
     <script src="./script/index.js" defer></script>
 </head>
 <body>
@@ -29,11 +37,11 @@
             <li>Store</li>
             <li>About</li>
         </ul>
-        <h1 class="logo"></h1>
+        <h1 class="logo"><img src="./image/logo.png" alt=""></h1>
         <ul class="header_right">
-            <li><a href="" class="search_icon"><img src="" alt=""></a></li>
-            <li><a href="" class="like_icon"><img src="" alt=""></a></li>
-            <li><a href="" class="profile_icon"><img src="" alt=""></a></li>
+            <li><a href="" class="search_icon"><img src="./image/search_icon.png" alt=""></a></li>
+            <li><a href="" class="like_icon"><img src="./image/like_icon.png" alt=""></a></li>
+            <li><a href="" class="profile_icon"><img src="./image/profile_icon.png" alt=""></a></li>
         </ul>
     </header>
     <div class="wrap">
@@ -41,21 +49,28 @@
             <div class="swiper" id="main_swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <h3>25 6th<br>campaign</h3>
-                        <h2>THREE</h2>
-                        <a href="" class="view_more_btn">View More</a>
+                        <div class="main_bnr_contents">
+                            <h3>25 6th<br>campaign</h3>
+                            <h2>THREE</h2>
+                            <a href="" class="view_more_btn">View More</a>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <h3>25 6th<br>campaign</h3>
-                        <h2>THREE</h2>
-                        <a href="" class="view_more_btn">View More</a>
+                        <div class="main_bnr_contents">
+                            <h3>25 6th<br>campaign</h3>
+                            <h2>THREE</h2>
+                            <a href="" class="view_more_btn">View More</a>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <h3>25 6th<br>campaign</h3>
-                        <h2>THREE</h2>
-                        <a href="" class="view_more_btn">View More</a>
+                        <div class="main_bnr_contents">
+                            <h3>25 6th<br>campaign</h3>
+                            <h2>THREE</h2>
+                            <a href="" class="view_more_btn">View More</a>
+                        </div>
                     </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
         <section class="best_section">
@@ -68,28 +83,88 @@
                 </a> 
             </div>
             <ul class="best_menu">
-                <li class="action">All</li>
+                <li class="active">All</li>
                 <li>Sunglasses</li>
                 <li>Glasses</li>
             </ul>
-            <div class="swiper" id="best_swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
+            <div class="best_swiper_wrap">
+                <div class="swiper" id="best_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best1.png" alt="">
+                            </a>
+                            <h4 class="product_title">ANDY Black</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best2.png" alt="">
+                            </a>
+                            <h4 class="product_title">EDIE leopard</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best3.png" alt="">
+                            </a>
+                            <h4 class="product_title">ZAYO Black</h4>
+                            <p class="product_price">49,900원</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best4.png" alt="">
+                            </a>
+                            <h4 class="product_title">MINN Leopard</h4>
+                            <p class="product_price">69,000원</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best5.png" alt="">
+                            </a>
+                            <h4 class="product_title">MINN Brown Crystal</h4>
+                            <p class="product_price">69,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best6.png" alt="">
+                            </a>
+                            <h4 class="product_title">WILO-S Silver</h4>
+                            <p class="product_price">69,000</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best7.png" alt="">
+                            </a>
+                            <h4 class="product_title">LASO Khaki</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best8.png" alt="">
+                            </a>
+                            <h4 class="product_title">OZZI-S Silver</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best9.png" alt="">
+                            </a>
+                            <h4 class="product_title">JERRI Grey Crystal</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="">
+                                <img src="./image/best10.png" alt="">
+                            </a>
+                            <h4 class="product_title">VIGOR Leopard</h4>
+                            <p class="product_price">49,900</p>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
                 </div>
-                <!-- 스와이퍼 바 / 택 1 -->
-                <div class="swiper-pagination"></div>
-                <div class="scrollbar"></div>
+                <a href="" class="view_more_btn">View More</a>
             </div>
-            <a href="" class="view_more_btn">View More</a>
         </section>
         <section class="new_section">
             <h3 class="title new_title">New</h3>

@@ -1,0 +1,28 @@
+$point-font :'Lexend Mega';
+$title-font :'Lexend Deca';
+
+$font-size12: 0.75rem;
+$font-size14: 0.875rem;
+$font-size16: 1rem;
+$font-size18: 1.125rem;
+$font-size20: 1.25rem;
+$font-size30: 1.875rem;
+
+$color-point-blue :#3172FF;
+
+@mixin flexrow {
+    display:flex; flex-flow:row nowrap; text-align: center; justify-content: space-between;
+}
+@mixin btn_d {
+    font-family: $point-font;
+    padding:15px 20px;
+    background-color:#fff;
+}
+@mixin product_title {
+    font-size:$font-size14;
+    font-weight: 600;
+}
+@mixin product_price {
+    font-size:$font-size12;
+    font-weight: 300;
+}
