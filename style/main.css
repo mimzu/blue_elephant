@@ -1,3 +1,4 @@
+@charset "UTF-8";
 header {
   padding: 20px;
   position: fixed;
@@ -43,6 +44,27 @@ header .header_right li a img {
   height: 22px;
 }
 
+.wrap {
+  /* 공통  */
+}
+.wrap .title {
+  font-family: "Lexend Deca";
+  font-size: 1.875rem;
+}
+.wrap .product_title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.wrap .product_price {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.wrap .view_more_btn {
+  font-family: "Lexend Mega";
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: 300;
+}
 .wrap .main_bnr #main_swiper {
   height: 950px;
   background-color: antiquewhite;
@@ -87,6 +109,11 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
+  font-weight: 300;
+}
+.wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide .main_bnr_contents a:hover {
+  background-color: #3172FF;
+  color: #fff;
 }
 .wrap .main_bnr #main_swiper .swiper-pagination {
   bottom: 50px;
@@ -100,7 +127,7 @@ header .header_right li a img {
   background-color: #fff;
 }
 .wrap .best_section {
-  height: 950px;
+  padding: 100px 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -125,19 +152,17 @@ header .header_right li a img {
   margin-bottom: 20px;
   display: flex;
   flex-flow: row nowrap;
-  gap: 15px;
+  gap: 20px;
+  align-items: end;
 }
-.wrap .best_section .best_title .title {
-  font-family: "Lexend Deca";
-  font-size: 1.875rem;
-}
+.wrap .best_section .best_title .title { /* 공통 */ }
 .wrap .best_section .best_title .today_delivery {
   display: flex;
   flex-flow: row nowrap;
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 .wrap .best_section .best_title .today_delivery img {
   width: 12px;
@@ -145,10 +170,18 @@ header .header_right li a img {
   border: 1px solid #999;
 }
 .wrap .best_section .best_title .today_delivery p {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #999;
 }
+.wrap .best_section .best_title .today_delivery.active img {
+  background-color: #000;
+  border: 1px solid #000;
+}
+.wrap .best_section .best_title .today_delivery.active p {
+  color: #000;
+}
 .wrap .best_section .best_menu {
+  margin-bottom: 40px;
   display: flex;
   flex-flow: row nowrap;
   text-align: center;
@@ -158,7 +191,7 @@ header .header_right li a img {
   gap: 20px;
   align-items: center;
 }
-.wrap .best_section .best_menu li {
+.wrap .best_section .best_menu li button {
   color: #999;
   display: flex;
   flex-flow: row nowrap;
@@ -166,8 +199,11 @@ header .header_right li a img {
   justify-content: space-between;
   gap: 20px;
   align-items: center;
+  letter-spacing: 0.05rem;
+  font-family: "Lexend Deca";
+  font-weight: 300;
 }
-.wrap .best_section .best_menu li::after {
+.wrap .best_section .best_menu li button::after {
   content: "";
   width: 1px;
   height: 15px;
@@ -175,16 +211,18 @@ header .header_right li a img {
   display: block;
   font-weight: 500;
 }
-.wrap .best_section .best_menu .active {
+.wrap .best_section .best_menu .active button {
   color: #000;
 }
+.wrap .best_section .best_menu li button:hover {
+  color: #3172FF;
+}
 .wrap .best_section .best_swiper_wrap {
-  position: relative;
+  text-align: center;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper {
-  margin: 40px 0 100px;
-  width: 100%;
-  height: 500px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide {
   text-align: center;
@@ -218,20 +256,410 @@ header .header_right li a img {
   background-color: #000;
 }
 .wrap .best_section .best_swiper_wrap .view_more_btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  display: block;
+  font-weight: 300;
   background-color: #999;
   color: #fff;
   font-weight: 300;
+  display: inline-block;
 }
 .wrap .best_section .view_more_btn:hover {
   background-color: #3172FF;
+}
+.wrap .new_section {
+  padding: 100px 0;
+  text-align: center;
+}
+.wrap .new_section .new_title { /* 공통 */
+  margin-bottom: 40px;
+}
+.wrap .new_section .new_swiper {
+  margin-bottom: 40px;
+}
+.wrap .new_section .new_swiper .swiper-wrapper {
+  width: 100%;
+}
+.wrap .new_section .new_swiper .swiper-wrapper .swiper-slide a {
+  display: block;
+  margin-bottom: 40px;
+}
+.wrap .new_section .new_swiper .swiper-wrapper .swiper-slide a img {
+  width: 100%;
+}
+.wrap .new_section .new_swiper .swiper-wrapper .swiper-slide .product_title {
+  margin-bottom: 10px;
+}
+.wrap .new_section .new_swiper .swiper-pagination {
+  gap: 20px;
+  bottom: 50px;
+}
+.wrap .new_section .new_swiper .swiper-pagination-bullet {
+  width: 100px;
+  height: 2px;
+  background-color: #999;
+  border-radius: 0;
+}
+.wrap .new_section .new_swiper .swiper-pagination-bullet-active {
+  background-color: #999;
+}
+.wrap .new_section .view_more_btn {
+  background-color: #999;
+  color: #fff;
+}
+.wrap .new_section .view_more_btn:hover {
+  background-color: #3172FF;
+}
+.wrap .frame_section {
+  display: flex;
+  flex-flow: row nowrap;
+  text-align: center;
+  justify-content: space-between;
+  justify-content: center;
+  padding: 178px 100px;
+  background-color: #000;
+  gap: 100px;
+  width: 100%;
+}
+.wrap .frame_section .frame_left {
+  color: #fff;
+  text-align: center;
+  width: 40%;
+}
+.wrap .frame_section .frame_left .title {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+.wrap .frame_section .frame_left .frame_select {
+  margin: 95px 0;
+}
+.wrap .frame_section .frame_left .frame_select .frame_select_title {
+  margin: 40px 0 10px;
+  width: max-content;
+  text-align: left;
+  font-family: "Lexend Mega";
+  font-weight: 300;
+}
+.wrap .frame_section .frame_left .frame_select .frame_select_title:nth-child(1) {
+  margin-top: 0;
+}
+.wrap .frame_section .frame_left .frame_select ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+.wrap .frame_section .frame_left .frame_select ul li {
+  padding: 10px 20px;
+  width: 100%;
+  border: 1px solid #fff;
+  min-width: max-content;
+}
+.wrap .frame_section .frame_left .frame_select ul li button {
+  color: #fff;
+  font-size: 0.875rem;
+  letter-spacing: 0.09rem;
+}
+.wrap .frame_section .frame_left .frame_select ul li { /* 여기에 문자 설정 */ }
+.wrap .frame_section .frame_left .frame_select ul li:hover {
+  background-color: #fff;
+}
+.wrap .frame_section .frame_left .frame_select ul li:hover button {
+  color: #000;
+}
+.wrap .frame_section .frame_left .frame_select ul li.click {
+  background-color: #fff;
+}
+.wrap .frame_section .frame_left .frame_select ul li.click button {
+  color: #000;
+}
+.wrap .frame_section .frame_left .result_btn {
+  font-family: "Lexend Mega";
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: 300;
+  display: inline-block;
+  font-weight: 400;
+  min-width: max-content;
+}
+.wrap .frame_section .frame_left .result_btn:hover {
+  background-color: #3172FF;
+  color: #fff;
+}
+.wrap .frame_section .frame_right {
+  width: 100%;
+  display: block;
+}
+.wrap .frame_section .frame_right .frame_img_box { /* background에 사진넣기 */
+  display: block;
+  padding: 266px 0;
+  background-image: url("../image/frame_back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+.wrap .frame_section .frame_right .frame_img_box p {
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 0.02rem;
+}
+.wrap .frame_section .frame_right .frame_img_box p em {
+  font-weight: 500;
+}
+.wrap .frame_section .frame_right .frame_img_result {
+  display: none;
+}
+.wrap .frame_section .frame_right .frame_img_result ul {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product {
+  background-color: #e8e8e8;
+  width: 33.33%;
+  padding-bottom: 20px;
+  border: 1px solid #000;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product a img {
+  width: 100%;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product .product_title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product:hover {
+  border: 1px solid #3172FF;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product:hover .product_title {
+  color: #3172FF;
+}
+.wrap .frame_section .frame_right .frame_img_result ul .frame_product:hover .product_price {
+  color: #3172FF;
+}
+.wrap .frame_section .frame_right .a {
+  color: #fff;
+  display: block;
+  background-color: red;
+}
+.wrap .frame_section .frame_right { /* 더보기 */ }
+.wrap .recomand_section {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 950px;
+  /* 공통 */
+}
+.wrap .recomand_section p:nth-child(1) {
+  margin-top: 719px;
+}
+.wrap .recomand_section p {
+  font-family: "Lexend Mega";
+  font-weight: 300;
+  font-size: 0.875rem;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.wrap .recomand_section .product_title {
+  font-family: "Lexend Mega";
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 5px 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.wrap .recomand_section .product_price {
+  font-family: "Lexend Mega";
+  font-weight: 300;
+  font-size: 1rem;
+}
+.wrap .recomand_section .shop_btn {
+  margin-top: 13px;
+  font-family: "Lexend Mega";
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: 300;
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+}
+.wrap .recomand_section .shop_btn:hover {
+  background-color: #3172FF;
+  color: #fff;
+}
+.wrap .recomand_section .re_left,
+.wrap .recomand_section .re_right {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.wrap .recomand_section {
+  /* background-image 깔기 */
+}
+.wrap .recomand_section .re_left {
+  background-image: url("../image/re_1.png");
+}
+.wrap .recomand_section .re_right {
+  background-image: url("../image/re_2.png");
+}
+.wrap .about_section { /* 자바로 한줄씩 나오게 애니메이션 */
+  background-image: url("../image/about1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 950px;
+  color: #fff;
+  text-align: center;
+  padding: 310px 0;
+}
+.wrap .about_section h5 {
+  font-family: "Lexend Mega";
+  margin-bottom: 50px;
+  font-size: 2rem;
+  letter-spacing: -0.1rem;
+}
+.wrap .about_section p {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  line-height: 150%;
+  letter-spacing: 0.3;
+  font-weight: 300;
+}
+.wrap .about_section p:nth-child(4) {
+  margin-bottom: 0;
+}
+.wrap .about_section .about_btn {
+  font-family: "Lexend Mega";
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: 300;
+  margin-top: 50px;
+  display: inline-block;
+  font-weight: 400;
+}
+.wrap .about_section .about_btn:hover {
+  background-color: #3172FF;
+  color: #fff;
+}
+.wrap .celeblities_section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.wrap .celeblities_section .cel_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 200%;
+  transition: transform 0.1s linear;
+}
+.wrap .celeblities_section .cel_wrapper .cel_wrap {
+  width: 50%;
+  background-color: #000;
+  border-right: 1px solid #fff;
+  height: 100%;
+  padding: 430px 0;
+  text-align: right;
+  will-change: transform;
+}
+.wrap .celeblities_section .cel_wrapper .cel_wrap h5 {
+  color: #fff;
+  font-family: "Lexend Mega";
+  font-size: 2rem;
+}
+.wrap .celeblities_section .cel_wrapper .cel_wrap p {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+.wrap .celeblities_section .cel_wrapper .cel_list {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+  height: 100%;
+  background-color: #000;
+  width: 50%;
+}
+.wrap .celeblities_section .cel_wrapper .cel_list .cel_1 {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+.wrap .celeblities_section .cel_wrapper .cel_list .cel_2 {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+footer {
+  padding: 50px 213px;
+  background-color: #000;
+  width: 100%;
+  color: #fff;
+}
+footer .top {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+footer .top dt {
+  font-family: "Lexend Deca";
+  letter-spacing: 0.09rem;
+  font-weight: 500;
+  line-height: 200%;
+  font-size: 0.875rem;
+}
+footer .top dd {
+  font-family: "Lexend Deca";
+  letter-spacing: 0.09rem;
+  font-weight: 300;
+  color: #999;
+  font-size: 0.75rem;
+  line-height: 150%;
+}
+footer .top .logo {
+  width: max-content;
+}
+footer .top .content {
+  width: max-content;
+  gap: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  /* 공통 디자인 */
+}
+footer .top .content .content_1,
+footer .top .content .content_2,
+footer .top .content .content_3 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+  font-family: "Lexend Deca";
+  width: max-content;
+  letter-spacing: 0.09rem;
+}
+footer .top .top_right {
+  width: max-content;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+}
+footer .bottom p {
+  color: #999;
+  line-height: 150%;
+  font-size: 0.75rem;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */

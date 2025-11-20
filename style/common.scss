@@ -17,6 +17,7 @@ $color-point-blue :#3172FF;
     font-family: $point-font;
     padding:15px 20px;
     background-color:#fff;
+    font-weight: 300;
 }
 @mixin product_title {
     font-size:$font-size14;
@@ -25,4 +26,9 @@ $color-point-blue :#3172FF;
 @mixin product_price {
     font-size:$font-size12;
     font-weight: 300;
+}
+@mixin background-setting  {
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
 }

@@ -74,18 +74,18 @@
             </div>
         </section>
         <section class="best_section">
-            <a href="" class="bar_bnr"><p>새벽 도착 주문 마감까지 04:04:20 남았습니다.</p></a>
+            <a href="" class="bar_bnr"><p>새벽 도착 주문 마감까지 <span id="countdown">00:01:14</span> 남았습니다.</p></a>
             <div class="best_title">
                 <h3 class="title">Best</h3>
-                <a class="today_delivery" href="">
+                <button class="today_delivery" href="">
                     <img src="" alt="">
-                    <p>오늘 도착</p>
-                </a> 
+                    <p>오늘 도착 상품만 보기</p>
+                </button> 
             </div>
             <ul class="best_menu">
-                <li class="active">All</li>
-                <li>Sunglasses</li>
-                <li>Glasses</li>
+                <li class="active"><button type="button">All</button></li>
+                <li><button type="button">Sunglasses</button></li>
+                <li><button type="button">Glasses</button></li>
             </ul>
             <div class="best_swiper_wrap">
                 <div class="swiper" id="best_swiper">
@@ -172,14 +172,14 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <a href="">
-                            <img src="" alt="">
+                            <img src="./image/new1.png" alt="">
                         </a>
                         <h4 class="product_title">TIAGO matte silver</h4>
                         <p class="product_price">69,000원</p>
                     </div>
                     <div class="swiper-slide">
                         <a href="">
-                            <img src="" alt="">
+                            <img src="./image/new2.png" alt="">
                         </a>
                         <h4 class="product_title">CONNIE khaki</h4>
                         <p class="product_price">49,000원</p>
@@ -190,63 +190,63 @@
             <a href="" class="view_more_btn">View More</a>
         </section>
         <section class="frame_section">
-            <div class="framde_left">
+            <div class="frame_left">
                 <h3 class="title">Frame by Category</h3>
                 <div class="frame_select">
                     <p class="frame_select_title">Shape</p>
                     <ul>
-                        <li>둥근</li>
-                        <li>각진</li>
-                        <li>캣아이</li>
+                        <li><button type="button">둥근</button></li>
+                        <li><button type="button">각진</button></li>
+                        <li><button type="button">캣아이</button></li>
                     </ul>
                     <p class="frame_select_title">Meterial</p>
                     <ul>
-                        <li>메탈</li>
-                        <li>아세테이트</li>
-                        <li>티타늄</li>
+                        <li><button type="button">메탈</button></li>
+                        <li><button type="button">아세테이트</button></li>
+                        <li><button type="button">티타늄</button></li>
                     </ul>
                     <p class="frame_select_title">Purpose</p>
                     <ul>
-                        <li>데일리</li>
-                        <li>아웃도어</li>
-                        <li>스타일리시</li>
+                        <li><button type="button">데일리</button></li>
+                        <li><button type="button">아웃도어</button></li>
+                        <li><button type="button">스타일리시</button></li>
                     </ul>
                 </div>
-                <a href="" class="result_btn">See Your Frames</a>
+                <button type="button" class="result_btn">See Your Frames</button>
             </div>
-            <div class="framde_right">
+            <div class="frame_right">
                 <div class="frame_img_box"> <!-- background에 사진 넣기 -->
                     <p>왼쪽에서 원하는 옵션을 선택해 <em>나만의 프레임</em>을 만나보세요!</p>
                 </div>  
                 <div class="frame_img_result">
                     <ul>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame1.png" alt=""></a>
                             <h4 class="product_title">EDIE peach</h4>
                             <p class="product_price">49,900원</p>
                         </li>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame2.png" alt=""></a>
                             <h4 class="product_title">HUMP black</h4>
                             <p class="product_price">49,900원</p>
                         </li>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame3.png" alt=""></a>
                             <h4 class="product_title">VIGOR black</h4>
                             <p class="product_price">49,900원</p>
                         </li>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame4.png" alt=""></a>
                             <h4 class="product_title">YUKI-S leopard</h4>
                             <p class="product_price">69,900원</p>
                         </li>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame5.png" alt=""></a>
                             <h4 class="product_title">CONNIE-S ash brown</h4>
                             <p class="product_price">49,900원</p>
                         </li>
                         <li class="frame_product">
-                            <a href=""><img src="" alt=""></a>
+                            <a href=""><img src="./image/frame6.png" alt=""></a>
                             <h4 class="product_title">HUMP nude beige</h4>
                             <p class="product_price">49,900원</p >
                         </li>
@@ -272,35 +272,38 @@
         <section class="about_section"><!-- 자바스크립트로 한줄씩 나오게 -->
             <h5>Good design should be accessible.</h5>
             <p>좋은 디자인은 멀리 있지 않습니다.</p>
-            <p>합리적인 가격으로 감각적인 제품을 제안하며,</p>
-            <p>누구나 일상 속에서 스타일을 즐길 수 있어야 한다고 믿습니다.</p>
+            <p>합리적인 가격으로 감각적인 제품을 제안하며,<br>누구나 일상 속에서 스타일을 즐길 수 있어야 한다고 믿습니다.</p>
             <p>그래서 블루엘리펀트는 감성과 가치를 동시에 담습니다.</p>
             <a href="" class="about_btn">View The Collection</a>
         </section>
         <section class="celeblities_section">
-            <div class="cel_wrap">
-                <h5>Chosen by those who know style.</h5>
-                <p>그들의 선택 안에는 블루엘리펀트의 가치가 담겨 있습니다.</p>
-            </div>
-            <div class="cel_1">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-            <div class="cel_2">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+            <div class="cel_wrapper">
+                <div class="cel_wrap">
+                    <h5>Chosen by those who know style.</h5>
+                    <p>그들의 선택 안에는 블루엘리펀트의 가치가 담겨 있습니다.</p>
+                </div>
+                <div class="cel_list">
+                    <div class="cel_1">
+                        <img src="./image/cel6.png" alt="">
+                        <img src="./image/cel2.png" alt="">
+                        <img src="./image/cel4.png" alt="">
+                        <img src="./image/cel5.png" alt="">
+                        <img src="./image/cel3.png" alt="">
+                        <img src="./image/cel5.png" alt="">
+                        <img src="./image/cel4.png" alt="">
+                        <img src="./image/cel1.png" alt="">
+                    </div>
+                    <div class="cel_2">
+                        <img src="./image/cel1.png" alt="">
+                        <img src="./image/cel3.png" alt="">
+                        <img src="./image/cel4.png" alt="">
+                        <img src="./image/cel5.png" alt="">
+                        <img src="./image/cel2.png" alt="">
+                        <img src="./image/cel6.png" alt="">
+                        <img src="./image/cel5.png" alt="">
+                        <img src="./image/cel4.png" alt="">
+                    </div>
+                </div>
             </div>
         </section>
         <section class="store_section">
@@ -318,5 +321,54 @@
             </ul>
         </section>
     </div>
+    <footer>
+        <div class="top">
+            <div class="logo">
+                <img src="./image/logo.png" style="filter:invert(1)" alt="">
+            </div>
+            <div class="content">
+                <dl class="content_1">
+                    <dt>CLIENT SERVICE</dt>
+                    <dd>NOTICE</dd>
+                    <dd>Q&A</dd>
+                    <dd>How to shop</dd>
+                    <dd>Review</dd>
+                </dl>
+                <dl class="content_2">
+                    <dt>THE COMPANY</dt>
+                    <dd>About Blue Elephant</dd>
+                    <dd>Terms of Use</dd>
+                    <dd>Privacy Policy</dd>
+                </dl>
+                <dl class="content_3">
+                    <dt>FIND US ON</dt>
+                    <dd>Instagram</dd>
+                    <dd>X</dd>
+                    <dd>TikTok</dd>
+                </dl>
+            </div>
+            <div class="top_right">
+                <dl class="bank">
+                    <dt>BANK ACCOUNT</dt>
+                    <dd>신한은행</dd>
+                    <dd>100-035-320768</dd>
+                    <dd>예금주</dd>
+                    <dd>(주)블루엘리펀트</dd>
+                </dl>
+                <dl class="delivery">
+                    <dt>DELIVERY INFO</dt>
+                    <dd>CJ 대한통운 /카카오T당일배송</dd>
+                    <dd>서울 성동구 아차산로 15번길 28 (태영종합물류) 5층 블루엘리펀트 물류센터</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="bottom">
+            <p>법인명(상호) : 주식회사 블루엘리펀트 대표자(성명) : 최진우 사업자 등록번호 안내 : [397-87-01239]
+                <br>통신판매업 신고 2024-서울성동-0536호[사업자정보확인] 사업지 : 04793 서울 성동구 아차산로5길 8 다미빌딩 5층
+                <br>개인정보보호책임자 : 최진우Hosting Provider : cafe24비지니스 관련 (국내/해외 영업) : business@blueelephant.co / 마케팅 관련 (홍보/협찬 등) : pr@blueelephant.co
+                <br>
+                <br>© 2025 블루엘리펀트. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
