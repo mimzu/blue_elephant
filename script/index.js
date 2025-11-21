@@ -44,6 +44,23 @@ document.querySelectorAll('.new_swiper img').forEach(img => {
     img.addEventListener('mouseleave', () => img.src = original);
 });
 
+// 모든 img_background 요소 선택
+const storeItems = document.querySelectorAll('.img_background');
+
+storeItems.forEach(item => {
+    const content = item.querySelector('.store_content');
+
+  // 마우스 올리면 _hover 클래스 추가
+    item.addEventListener('mouseenter', () => {
+    content.classList.add('store_content_hover');
+    });
+
+  // 마우스 나가면 _hover 클래스 제거
+    item.addEventListener('mouseleave', () => {
+    content.classList.remove('store_content_hover');
+    });
+});
+
 /* 오늘도착 클릭 시 체크박스 색칠 */
 document.addEventListener("click", function (e) {
     const target = e.target.closest(".today_delivery");
@@ -177,23 +194,49 @@ document.querySelectorAll('a').forEach(a => {
     });
 });
 
-/* document.addEventListener("DOMContentLoaded", () => {
-    const section = document.querySelector(".celeblities_section");
-    const sectionWidth = section.scrollWidth; // 가로 전체 길이
-    const windowHeight = window.innerHeight;
+    /* =========================================================스크롤 트리거 ============================================== */
 
-    // 스크롤 이벤트를 가로 이동으로 변환
-    window.addEventListener("scroll", (e) => {
-        // 현재 세로 스크롤 위치
-        const scrollY = window.scrollY;
 
-        // 화면 높이만큼 스크롤을 가로 이동으로 계산
-        const translateX = Math.min(scrollY, sectionWidth - window.innerWidth);
-        section.style.transform = `translateX(${-translateX}px)`;
 
-        // 스크롤이 가로 끝에 다다르면 더 이상 아래로 안 내려가게
-        if (scrollY > sectionWidth - window.innerWidth) {
-            window.scrollTo(0, sectionWidth - window.innerWidth);
-        }
+document.addEventListner ("DOMContentLoaded",(event)=>{
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+
+    console.clear();
+
+    gsap.set(".split", { opacity: 1 });
+
+
+
+    document.fonts.ready.then(() => {
+        let containers = gsap.utils.toArray(".container");
+
+        containers.forEach((container) => {
+            let text = container.querySelector(".split");
+            let animation;
+
+            SplitText.create(text, {
+                type: "words,lines",
+                mask: "lines",
+                linesClass: "line",
+                autoSplit: true,
+                onSplit: (instance) => {
+                    console.log("split")
+                    return gsap.from(instance.lines, {
+                        yPercent: 120,
+                        stagger: 0.1,
+                        scrollTrigger: {
+                            trigger: container,
+                            markers: true,
+                            scrub: true,
+                            start: "clamp(top center)",
+                            end: "clamp(bottom center)"
+                        }
+                    });
+                }
+            });
+        });
     });
-}); */
+})
+
+
+    /* =========================================================스크롤 트리거 ============================================== */

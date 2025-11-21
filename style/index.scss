@@ -176,7 +176,7 @@ header {padding: 20px; position:fixed;
                     }
                 }
             }
-            .result_btn {@include btn_d; display:inline-block;  font-weight: 400; min-width: max-content;}
+            .result_btn {@include btn_d; display:inline-block;   min-width: max-content;}
             .result_btn:hover {background-color:$color-point-blue; color:#fff;}
         }
         .frame_right {  width: 100%; display:block; 
@@ -236,29 +236,37 @@ header {padding: 20px; position:fixed;
         color:#fff;
         text-align: center;
         padding:310px 0;
-        h5 {font-family: $point-font; margin-bottom:50px; font-size:2rem; letter-spacing: -0.1rem;}
-        p {margin-bottom:10px; font-size:$font-size20; line-height: 150%; letter-spacing: 0.3; font-weight: 300;}
-        p:nth-child(4) {margin-bottom:0;}
-        .about_btn {@include btn_d; margin-top:50px; display:inline-block; font-weight: 400;}
-        .about_btn:hover {background-color:$color-point-blue; color:#fff;}
+        .container {
+            width:90vh; margin-top:40vh;
+            .split{ 
+                opacity:0;
+                will-change : transform;
+            }
+            .split * {
+                will-change : transform; 
+            }
+        }
+        .container h5 {font-family: $point-font; margin-bottom:50px; font-size:2rem; letter-spacing: -0.1rem;}
+        .container p {margin-bottom:10px; font-size:$font-size16; line-height: 150%; letter-spacing: 0.3; font-weight: 300;}
+        .container p:nth-child(4) {margin-bottom:0;}
+        .container .about_btn {@include btn_d; margin-top:50px; display:inline-block; }
+        .container .about_btn:hover {background-color:$color-point-blue; color:#fff;}
     }
     .celeblities_section {
         width:100%; 
         height: 100vh;
-        overflow:hidden;
         position:relative;
+        overflow: hidden;
         .cel_wrapper {
-            position:absolute;
-            top:0;
-            left:0;
             height: 100%;
             display:flex; 
-            flex-flow:row nowrap;
-            width:200%;
-            transition: transform 0.1s linear;
+            /* flex-flow:row nowrap; */
+            width:calc(100%*2);
+            transform:translateX(0);
+            background-color:#000;
             .cel_wrap {
+                display:none;
                 width: 50%;
-                background-color:#000;
                 border-right:1px solid #fff;
                 height: 100%; 
                 padding:430px 0;
@@ -267,26 +275,48 @@ header {padding: 20px; position:fixed;
                 h5 {color:#fff; font-family:$point-font; font-size:2rem;}
                 p {margin-top:20px; color:#fff; font-size:$font-size20; font-weight: 300;}
             }
-            .cel_list {display:flex; flex-flow:column nowrap; gap:50px; height: 100%; background-color:#000; width: 50%;
-                .cel_1 {display:flex; flex-flow:row nowrap; gap:50px; justify-content: space-between;
-                    img {}
-                }
+            .cel_list {
+                display:flex; 
+                flex-flow:column nowrap;
+                justify-content: center;
+                gap:50px; 
+                height: 100%; 
+                width: 50%;
+                .cel_1,
                 .cel_2 {display:flex; flex-flow:row nowrap; gap:50px; justify-content: space-between;
-                    img {}
+                    img {width: auto; height: 250px;}
                 }
             }
         }
     }
-    .store_section {
-        .title {}
-        .stores_img {
-            li {
-                p {
-                    strong {}
+    .store_section {text-align: center; padding:130px 160px;
+        .title {margin-bottom:50px;}
+        .stores_img { display:flex; 
+            flex-flow:row nowrap; gap:50px; justify-content: center; align-items: center;
+            margin-bottom:50px;
+            li { width: 100%; height: 500px;
+                .img_background { @include background-setting; height: 100%;
+                    .store_content {display:none;}
+                    .store_content_hover {
+                        color:#fff;
+                        display:flex; flex-flow: column nowrap; 
+                        height: 100%; justify-content: center; 
+                        align-items: center;
+                        background-color:rgba(0, 0, 0, 0.7);
+                        p {font-family:$point-font; font-weight: 300; font-size:$font-size14; line-height: 150%;
+                            strong {font-weight: 500; font-size:$font-size20; font-family:$point-font;}
+                        }
+                        p:nth-child(1) { margin-bottom:20px;}
+                        img {}
+                    }
                 }
-                img {}
             }
+            li:nth-child(1) .img_background {background-image: url(../image/store1.png);}
+            li:nth-child(2) .img_background {background-image: url(../image/store2.png);}
+            li:nth-child(3) .img_background {background-image: url(../image/store3.png);}
         }
+        .store_btn {@include btn_d; background-color:#999;color:#fff;}
+        .store_btn:hover {background-color:$color-point-blue; }
     }
 }
 footer { padding : 50px 213px;

@@ -63,7 +63,7 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
 }
 .wrap .main_bnr #main_swiper {
   height: 950px;
@@ -109,7 +109,7 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide .main_bnr_contents a:hover {
   background-color: #3172FF;
@@ -259,7 +259,7 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
   background-color: #999;
   color: #fff;
   font-weight: 300;
@@ -377,9 +377,8 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
   display: inline-block;
-  font-weight: 400;
   min-width: max-content;
 }
 .wrap .frame_section .frame_left .result_btn:hover {
@@ -478,7 +477,7 @@ header .header_right li a img {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
   display: inline-block;
   background-color: #000;
   color: #fff;
@@ -515,54 +514,62 @@ header .header_right li a img {
   text-align: center;
   padding: 310px 0;
 }
-.wrap .about_section h5 {
+.wrap .about_section .container {
+  width: 90vh;
+  margin-top: 40vh;
+}
+.wrap .about_section .container .split {
+  opacity: 0;
+  will-change: transform;
+}
+.wrap .about_section .container .split * {
+  will-change: transform;
+}
+.wrap .about_section .container h5 {
   font-family: "Lexend Mega";
   margin-bottom: 50px;
   font-size: 2rem;
   letter-spacing: -0.1rem;
 }
-.wrap .about_section p {
+.wrap .about_section .container p {
   margin-bottom: 10px;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 150%;
   letter-spacing: 0.3;
   font-weight: 300;
 }
-.wrap .about_section p:nth-child(4) {
+.wrap .about_section .container p:nth-child(4) {
   margin-bottom: 0;
 }
-.wrap .about_section .about_btn {
+.wrap .about_section .container .about_btn {
   font-family: "Lexend Mega";
   padding: 15px 20px;
   background-color: #fff;
-  font-weight: 300;
+  font-weight: 350;
   margin-top: 50px;
   display: inline-block;
-  font-weight: 400;
 }
-.wrap .about_section .about_btn:hover {
+.wrap .about_section .container .about_btn:hover {
   background-color: #3172FF;
   color: #fff;
 }
 .wrap .celeblities_section {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .wrap .celeblities_section .cel_wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   display: flex;
-  flex-flow: row nowrap;
+  /* flex-flow:row nowrap; */
   width: 200%;
-  transition: transform 0.1s linear;
+  transform: translateX(0);
+  background-color: #000;
 }
 .wrap .celeblities_section .cel_wrapper .cel_wrap {
+  display: none;
   width: 50%;
-  background-color: #000;
   border-right: 1px solid #fff;
   height: 100%;
   padding: 430px 0;
@@ -583,23 +590,95 @@ header .header_right li a img {
 .wrap .celeblities_section .cel_wrapper .cel_list {
   display: flex;
   flex-flow: column nowrap;
+  justify-content: center;
   gap: 50px;
   height: 100%;
-  background-color: #000;
   width: 50%;
 }
-.wrap .celeblities_section .cel_wrapper .cel_list .cel_1 {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 50px;
-  justify-content: space-between;
-}
+.wrap .celeblities_section .cel_wrapper .cel_list .cel_1,
 .wrap .celeblities_section .cel_wrapper .cel_list .cel_2 {
   display: flex;
   flex-flow: row nowrap;
   gap: 50px;
   justify-content: space-between;
 }
+.wrap .celeblities_section .cel_wrapper .cel_list .cel_1 img,
+.wrap .celeblities_section .cel_wrapper .cel_list .cel_2 img {
+  width: auto;
+  height: 250px;
+}
+.wrap .store_section {
+  text-align: center;
+  padding: 130px 160px;
+}
+.wrap .store_section .title {
+  margin-bottom: 50px;
+}
+.wrap .store_section .stores_img {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.wrap .store_section .stores_img li {
+  width: 100%;
+  height: 500px;
+}
+.wrap .store_section .stores_img li .img_background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+.wrap .store_section .stores_img li .img_background .store_content {
+  display: none;
+}
+.wrap .store_section .stores_img li .img_background .store_content_hover {
+  color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.wrap .store_section .stores_img li .img_background .store_content_hover p {
+  font-family: "Lexend Mega";
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 150%;
+}
+.wrap .store_section .stores_img li .img_background .store_content_hover p strong {
+  font-weight: 500;
+  font-size: 1.25rem;
+  font-family: "Lexend Mega";
+}
+.wrap .store_section .stores_img li .img_background .store_content_hover p:nth-child(1) {
+  margin-bottom: 20px;
+}
+.wrap .store_section .stores_img li:nth-child(1) .img_background {
+  background-image: url(../image/store1.png);
+}
+.wrap .store_section .stores_img li:nth-child(2) .img_background {
+  background-image: url(../image/store2.png);
+}
+.wrap .store_section .stores_img li:nth-child(3) .img_background {
+  background-image: url(../image/store3.png);
+}
+.wrap .store_section .store_btn {
+  font-family: "Lexend Mega";
+  padding: 15px 20px;
+  background-color: #fff;
+  font-weight: 350;
+  background-color: #999;
+  color: #fff;
+}
+.wrap .store_section .store_btn:hover {
+  background-color: #3172FF;
+}
+
 footer {
   padding: 50px 213px;
   background-color: #000;
