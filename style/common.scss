@@ -32,3 +32,6 @@ $color-point-blue :#3172FF;
     background-size:cover;
     background-position:center;
 }
+@mixin font-shadow {
+    text-shadow: 0px 0px 5px rgba(15, 15, 15, 0.719);
+}

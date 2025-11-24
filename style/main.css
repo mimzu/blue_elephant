@@ -18,9 +18,13 @@ header .header_left {
   justify-content: space-between;
   width: 25%;
 }
-header .header_left li {
+header .header_left li a {
   font-family: "Lexend Mega";
   font-size: 0.875rem;
+}
+header .header_left li a:hover {
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(15, 15, 15, 0.719);
 }
 header .logo {
   position: absolute;
@@ -95,6 +99,7 @@ header .header_right li a img {
   font-weight: 200;
   font-size: 1.25rem;
   color: #fff;
+  text-shadow: 0px 0px 5px rgba(15, 15, 15, 0.719);
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide .main_bnr_contents h2 {
   font-family: "Lexend Mega";
@@ -102,6 +107,7 @@ header .header_right li a img {
   font-size: 1.875rem;
   font-weight: 700;
   color: #fff;
+  text-shadow: 0px 0px 5px rgba(15, 15, 15, 0.719);
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide .main_bnr_contents a {
   padding: 15px 30px;
@@ -173,6 +179,12 @@ header .header_right li a img {
   font-size: 0.75rem;
   color: #999;
 }
+.wrap .best_section .best_title .today_delivery:hover img {
+  border-color: #3172FF;
+}
+.wrap .best_section .best_title .today_delivery:hover p {
+  color: #3172FF;
+}
 .wrap .best_section .best_title .today_delivery.active img {
   background-color: #000;
   border: 1px solid #000;
@@ -235,14 +247,23 @@ header .header_right li a img {
   width: 100%;
   height: auto;
 }
-.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide .product_title {
+.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a .product_title {
   font-size: 0.875rem;
   font-weight: 600;
   margin: 15px 0 5px;
 }
-.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide .product_price {
+.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a .product_price {
   font-size: 0.75rem;
   font-weight: 300;
+}
+.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a:hover img {
+  border: 1px solid #3172FF;
+}
+.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a:hover .product_title {
+  color: #3172FF;
+}
+.wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a:hover .product_price {
+  color: #3172FF;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-scrollbar {
   height: 1px;
@@ -504,6 +525,9 @@ header .header_right li a img {
 .wrap .recomand_section .re_right {
   background-image: url("../image/re_2.png");
 }
+.wrap {
+  /* =========================================================스크롤 트리거 ============================================== */
+}
 .wrap .about_section { /* 자바로 한줄씩 나오게 애니메이션 */
   background-image: url("../image/about1.png");
   background-repeat: no-repeat;
@@ -552,6 +576,9 @@ header .header_right li a img {
 .wrap .about_section .container .about_btn:hover {
   background-color: #3172FF;
   color: #fff;
+}
+.wrap {
+  /* =========================================================스크롤 트리거 ============================================== */
 }
 .wrap .celeblities_section {
   width: 100%;

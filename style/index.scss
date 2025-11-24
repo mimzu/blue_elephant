@@ -4,7 +4,16 @@ header {padding: 20px; position:fixed;
     top:0; left:0; width: 100%; z-index: 990; 
     @include flexrow;
     .header_left { @include flexrow; width: 25%;
-        li {font-family: $point-font; font-size:$font-size14}
+        li {
+            a{
+                font-family: $point-font; font-size:$font-size14;
+                
+            }
+            a:hover {
+                color:#fff;
+                @include font-shadow
+            }
+        }
     }
     .logo {position:absolute; left: 50%;
         transform: translateX(-50%);        
@@ -49,11 +58,13 @@ header {padding: 20px; position:fixed;
                         h3 {
                             font-family: $point-font; font-weight: 200;
                             font-size:$font-size20; color:#fff;
+                            @include font-shadow;
                         }
                         h2 {
                             font-family: $point-font; margin: 10px 0;
                             font-size:$font-size30; font-weight: 700;
                             color:#fff;
+                            @include font-shadow;
                         }
                         a {
                             padding:15px 30px; display:inline-block;
@@ -90,6 +101,10 @@ header {padding: 20px; position:fixed;
                 img {width: 12px; height: 12px; border:1px solid #999;}
                 p {font-size: $font-size12; color:#999;}
             }
+            .today_delivery:hover {
+                img {border-color:$color-point-blue;}
+                p {color:$color-point-blue}
+            }
             .today_delivery.active {
                 img {background-color:#000; border:1px solid #000;}
                 p {color:#000;}
@@ -110,9 +125,14 @@ header {padding: 20px; position:fixed;
                         margin-right:1px;
                         a {display:inline-block;
                             img {width: 100%; height: auto;}
+                            .product_title {@include product_title; margin: 15px 0 5px;}
+                            .product_price {@include product_price}
                         }
-                        .product_title {@include product_title; margin: 15px 0 5px;}
-                        .product_price {@include product_price}
+                        a:hover {
+                            img {border:1px solid $color-point-blue}
+                            .product_title {color:$color-point-blue}
+                            .product_price {color:$color-point-blue}
+                        }
                     }
                 }
                 .swiper-scrollbar {
@@ -229,6 +249,7 @@ header {padding: 20px; position:fixed;
         .re_left {background-image: url('../image/re_1.png');}
         .re_right {background-image: url('../image/re_2.png');}
     } 
+    /* =========================================================스크롤 트리거 ============================================== */
     .about_section {/* 자바로 한줄씩 나오게 애니메이션 */
         background-image: url('../image/about1.png');
         @include background-setting;
@@ -252,6 +273,7 @@ header {padding: 20px; position:fixed;
         .container .about_btn {@include btn_d; margin-top:50px; display:inline-block; }
         .container .about_btn:hover {background-color:$color-point-blue; color:#fff;}
     }
+    /* =========================================================스크롤 트리거 ============================================== */
     .celeblities_section {
         width:100%; 
         height: 100vh;
