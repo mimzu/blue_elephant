@@ -17,6 +17,7 @@ header .header_left {
   text-align: center;
   justify-content: space-between;
   width: 25%;
+  align-items: center;
 }
 header .header_left li a {
   font-family: "Lexend Mega";
@@ -46,6 +47,27 @@ header .header_right {
 header .header_right li a img {
   width: auto;
   height: 22px;
+}
+header .header_right li a:hover {
+  filter: invert(1);
+}
+
+header.scroll {
+  background-color: #000;
+  padding: 10px 20px;
+}
+header.scroll .header_left li a {
+  color: #fff;
+  font-weight: 300;
+}
+header.scroll .header_left li a:hover {
+  color: #3172FF;
+}
+header.scroll .logo {
+  display: none;
+}
+header.scroll .header_right {
+  filter: invert(1);
 }
 
 .wrap {
@@ -534,24 +556,27 @@ header .header_right li a img {
   background-size: cover;
   background-position: center;
   height: 950px;
-  color: #fff;
-  text-align: center;
   padding: 310px 0;
+  text-align: center;
 }
 .wrap .about_section .container {
-  width: 90vh;
-  margin-top: 40vh;
+  width: 100%;
 }
 .wrap .about_section .container .split {
-  opacity: 0;
-  will-change: transform;
+  text-align: center;
+  color: #fff;
 }
 .wrap .about_section .container .split * {
   will-change: transform;
 }
+.wrap .about_section .container .spacer {
+  height: 40vh;
+}
+.wrap .about_section .container:nth-child(1) {
+  margin-bottom: 50px;
+}
 .wrap .about_section .container h5 {
   font-family: "Lexend Mega";
-  margin-bottom: 50px;
   font-size: 2rem;
   letter-spacing: -0.1rem;
 }
@@ -572,34 +597,31 @@ header .header_right li a img {
   font-weight: 350;
   margin-top: 50px;
   display: inline-block;
+  color: #000;
 }
 .wrap .about_section .container .about_btn:hover {
   background-color: #3172FF;
   color: #fff;
 }
-.wrap {
-  /* =========================================================스크롤 트리거 ============================================== */
-}
 .wrap .celeblities_section {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   position: relative;
-  overflow: hidden;
-}
-.wrap .celeblities_section .cel_wrapper {
-  height: 100%;
-  display: flex;
-  /* flex-flow:row nowrap; */
-  width: 200%;
-  transform: translateX(0);
   background-color: #000;
 }
+.wrap .celeblities_section .cel_wrapper {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  width: 200%;
+  transform: translateX(0);
+}
 .wrap .celeblities_section .cel_wrapper .cel_wrap {
-  display: none;
   width: 50%;
   border-right: 1px solid #fff;
   height: 100%;
-  padding: 430px 0;
+  padding: 430px 50px;
   text-align: right;
   will-change: transform;
 }
@@ -658,6 +680,7 @@ header .header_right li a img {
   background-size: cover;
   background-position: center;
   height: 100%;
+  display: block;
 }
 .wrap .store_section .stores_img li .img_background .store_content {
   display: none;

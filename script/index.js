@@ -1,3 +1,21 @@
+
+
+/* 헤더 스크롤 시 변경  */
+document.addEventListener ("scroll",function () {
+    const header = document.querySelector("header");
+    const mainBnr =document.querySelector(".main_bnr");
+    
+    const bannerHeight = mainBnr.offsetHeight;
+    const scrollTop = window.scrollY;
+
+    if (scrollTop > bannerHeight - 65) {
+        header.classList.add("scroll");
+    } else {
+        header.classList.remove("scroll");
+    }
+});
+
+/* main배너 swiper */
 var mainSwiper = new Swiper('#main_swiper', { 
     loop: false,
     autoplay: {
@@ -19,6 +37,7 @@ var newSwiper = new Swiper('.new_swiper', {
     }
 })
 
+/* best swiper */
 var bestSwiper = new Swiper ('#best_swiper', {
     loop:false,
     slidesPerView: 3,
@@ -70,7 +89,7 @@ document.addEventListener("click", function (e) {
 });
 
 
-
+/* 제한 시간 */
 function startCountdown() {
     const countdown = document.getElementById("countdown");
     const parentP = countdown.parentElement;
@@ -119,7 +138,7 @@ function startCountdown() {
 // 페이지 로드 시 시작
 window.addEventListener('DOMContentLoaded', startCountdown);
 
-
+/* frame by category 섹션 */
 document.addEventListener("click", function(e) {
     const clickedLi = e.target.closest(".frame_select li");
     if (clickedLi) {
@@ -146,6 +165,7 @@ document.addEventListener("click", function(e) {
     }
 });
 
+/* 버튼 내용 바꾸기 */
 document.addEventListener("DOMContentLoaded", () => {
     const resultBtn = document.querySelector(".result_btn");
     const imgBox = document.querySelector(".frame_img_box");
@@ -188,55 +208,76 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+/* about 섹션 */
+document.addEventListener("DOMContentLoaded", () => {
+    const containers = document.querySelectorAll(".about_section .container");
+
+    // 초기 상태
+    containers.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(50px)";
+    });
+
+    function animateContainers() {
+        const windowBottom = window.scrollY + window.innerHeight;
+
+        containers.forEach((el, index) => {
+            const elTop = el.getBoundingClientRect().top + window.scrollY;
+
+            if (windowBottom > elTop + 50) {
+                // 등장할 때, 시간차 추가
+                gsap.to(el, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    delay: index * 0.5, // 순차적으로 등장
+                    ease: "power2.out"
+                });
+            } else {
+                gsap.to(el, {
+                    opacity: 0,
+                    y: 50,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            }
+        });
+    }
+
+    window.addEventListener("scroll", animateContainers);
+    animateContainers(); // 로딩 시 체크
+});
+
+/* 전체 a 태그 비활성화 */
 document.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', function (e) {
         e.preventDefault();
     });
 });
 
-    /* =========================================================스크롤 트리거 ============================================== */
 
+/* 셀러브리티 섹션 */
+document.addEventListener("DOMContentLoaded", () => {
+    const section = document.querySelector(".celeblities_section");
+    const wrapper = section.querySelector(".cel_wrapper");
+    const wrapperWidth = wrapper.scrollWidth - window.innerWidth; // 화면 기준으로 이동량
 
+    function scrollHorizontal() {
+        const scrollY = window.scrollY;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight - window.innerHeight; // 100vh
 
-document.addEventListner ("DOMContentLoaded",(event)=>{
-    gsap.registerPlugin(SplitText, ScrollTrigger);
+        if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+            const progress = (scrollY - sectionTop) / sectionHeight; // 0~1
+            const x = progress * wrapperWidth;
+            wrapper.style.transform = `translateX(-${x}px)`;
+        } else if (scrollY < sectionTop) {
+            wrapper.style.transform = "translateX(0)";
+        } else if (scrollY > sectionTop + sectionHeight) {
+            wrapper.style.transform = `translateX(-${wrapperWidth}px)`;
+        }
+    }
 
-    console.clear();
-
-    gsap.set(".split", { opacity: 1 });
-
-
-
-    document.fonts.ready.then(() => {
-        let containers = gsap.utils.toArray(".container");
-
-        containers.forEach((container) => {
-            let text = container.querySelector(".split");
-            let animation;
-
-            SplitText.create(text, {
-                type: "words,lines",
-                mask: "lines",
-                linesClass: "line",
-                autoSplit: true,
-                onSplit: (instance) => {
-                    console.log("split")
-                    return gsap.from(instance.lines, {
-                        yPercent: 120,
-                        stagger: 0.1,
-                        scrollTrigger: {
-                            trigger: container,
-                            markers: true,
-                            scrub: true,
-                            start: "clamp(top center)",
-                            end: "clamp(bottom center)"
-                        }
-                    });
-                }
-            });
-        });
-    });
-})
-
-
-    /* =========================================================스크롤 트리거 ============================================== */
+    window.addEventListener("scroll", scrollHorizontal);
+    scrollHorizontal();
+});

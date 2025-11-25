@@ -3,11 +3,10 @@
 header {padding: 20px; position:fixed;
     top:0; left:0; width: 100%; z-index: 990; 
     @include flexrow;
-    .header_left { @include flexrow; width: 25%;
+    .header_left { @include flexrow; width: 25%; align-items: center;
         li {
             a{
                 font-family: $point-font; font-size:$font-size14;
-                
             }
             a:hover {
                 color:#fff;
@@ -24,7 +23,29 @@ header {padding: 20px; position:fixed;
             a {
                 img {width: auto; height: 22px;}
             }
+            a:hover {
+                filter:invert(1);
+            }
         }
+    }
+}
+header.scroll {
+    background-color:#000;
+    padding:10px 20px;
+    .header_left {
+        li {
+            a {color:#fff;
+                font-weight: 300;}
+            a:hover {
+                color:$color-point-blue;
+            }
+        }
+    }
+    .logo {
+        display:none;
+    }
+    .header_right {
+        filter:invert(1);
     }
 }
 .wrap {
@@ -254,44 +275,45 @@ header {padding: 20px; position:fixed;
         background-image: url('../image/about1.png');
         @include background-setting;
         height: 950px;
-        color:#fff;
-        text-align: center;
         padding:310px 0;
-        .container {
-            width:90vh; margin-top:40vh;
-            .split{ 
-                opacity:0;
-                will-change : transform;
+        text-align:center;
+        .container { 
+            width: 100%; 
+            .split{
+                text-align: center;
+                color:#fff;
             }
             .split * {
-                will-change : transform; 
+                will-change: transform;
+            }
+            .spacer {
+                height: 40vh;
             }
         }
-        .container h5 {font-family: $point-font; margin-bottom:50px; font-size:2rem; letter-spacing: -0.1rem;}
+        .container:nth-child(1) { margin-bottom:50px;}
+        .container h5 {font-family: $point-font; font-size:2rem; letter-spacing: -0.1rem;}
         .container p {margin-bottom:10px; font-size:$font-size16; line-height: 150%; letter-spacing: 0.3; font-weight: 300;}
         .container p:nth-child(4) {margin-bottom:0;}
-        .container .about_btn {@include btn_d; margin-top:50px; display:inline-block; }
+        .container .about_btn {@include btn_d; margin-top:50px; display:inline-block; color:#000;}
         .container .about_btn:hover {background-color:$color-point-blue; color:#fff;}
     }
-    /* =========================================================스크롤 트리거 ============================================== */
     .celeblities_section {
         width:100%; 
-        height: 100vh;
-        position:relative;
-        overflow: hidden;
+        height: 200vh;
+        position: relative;
+        background-color:#000;
         .cel_wrapper {
-            height: 100%;
+            height: 100vh;
+            position:sticky;
+            top:0;
             display:flex; 
-            /* flex-flow:row nowrap; */
             width:calc(100%*2);
             transform:translateX(0);
-            background-color:#000;
             .cel_wrap {
-                display:none;
                 width: 50%;
                 border-right:1px solid #fff;
                 height: 100%; 
-                padding:430px 0;
+                padding:430px 50px;
                 text-align: right;
                 will-change: transform;
                 h5 {color:#fff; font-family:$point-font; font-size:2rem;}
@@ -318,6 +340,7 @@ header {padding: 20px; position:fixed;
             margin-bottom:50px;
             li { width: 100%; height: 500px;
                 .img_background { @include background-setting; height: 100%;
+                    display:block;
                     .store_content {display:none;}
                     .store_content_hover {
                         color:#fff;
