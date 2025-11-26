@@ -55,22 +55,29 @@ header.scroll {
     .product_price {@include product_price;}
     .view_more_btn {@include btn_d;}
     
-
     .main_bnr { 
         #main_swiper {
-            height: 950px; background-color:antiquewhite;
+            height: 950px; overflow:hidden;
             .swiper-wrapper {
                 .swiper-slide {position:relative;
                     background-size:cover;
                     background-position:center;
+                    overflow:hidden;
                     &:nth-child(1) {
-                        background-image: url('../image/main_bg1.png');
+                        .main_video {
+                            width: 100%;
+                        }
                     }
                     &:nth-child(2) {
-                        background-image: url('../image/main_bg2.png');
+                        background-image: url('../image/main_bg1.png');
                     }
                     &:nth-child(3) {
-                        background-image: url('../image/main_bg3.png');
+                        background-image: url('../image/main_bg2.png');
+                        .main_bnr_contents {
+                            h3 {
+                                font-size:$font-size30;
+                            }
+                        }
                     }
                     .main_bnr_contents {
                         text-align: center;
@@ -107,14 +114,14 @@ header.scroll {
             }
         }
     }
+    .bar_bnr {
+        position:sticky; top:45px; z-index: 500;
+        display:block; width: 100%;text-align: center; background-color:#000; 
+        padding:10px;
+        p{color:#fff; font-size:$font-size14; font-weight: 300;}
+    }
     .best_section { padding: 100px 0;
-        display:flex; flex-flow:column nowrap; justify-content: center; position:relative; 
-        .bar_bnr {
-            position:absolute; top:0;
-            display:block; width: 100%;text-align: center; background-color:#000; 
-            padding:10px;
-            p{color:#fff; font-size:$font-size14; font-weight: 300;}
-        }
+        display:flex; flex-flow:column nowrap; justify-content: center; 
         .best_title {padding:0 20px; margin-bottom:20px;
             display:flex; flex-flow:row nowrap; gap:20px; align-items: end;
             .title {/* 공통 */}

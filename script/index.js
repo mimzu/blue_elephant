@@ -15,7 +15,11 @@ document.addEventListener ("scroll",function () {
     }
 });
 
-/* main배너 swiper */
+
+
+/* ============================================= main ======================================== */
+
+
 var mainSwiper = new Swiper('#main_swiper', { 
     loop: false,
     autoplay: {
@@ -23,9 +27,47 @@ var mainSwiper = new Swiper('#main_swiper', {
         disableOnInteraction: false,
     },
     pagination: {
-    el:'#main_swiper .swiper-pagination',
+        el:'#main_swiper .swiper-pagination',
+        clickable:true,
     }
-})
+});
+
+const firstSlideVideo = document.querySelector('.swiper-slide:nth-child(1) video');
+
+// 처음 로딩 시 재생
+if (firstSlideVideo) {
+    firstSlideVideo.play().catch(() => {}); // iOS/브라우저 대비
+}
+
+const firstVideo = document.querySelector('.swiper-slide:nth-child(1) video');
+
+// 처음 로딩 시
+if (firstVideo) {
+    mainSwiper.autoplay.stop();       // 첫 슬라이드는 영상 끝날 때까지 자동 슬라이드 멈춤
+    firstVideo.currentTime = 0;
+    firstVideo.play().catch(()=>{});
+    
+    firstVideo.onended = () => {
+        mainSwiper.slideNext();       // 영상 끝나면 다음 슬라이드
+        mainSwiper.autoplay.start();  // 나머지는 4초 딜레이로 자동 진행
+    };
+}
+
+// 슬라이드 변경 이벤트
+mainSwiper.on('slideChange', () => {
+    const idx = mainSwiper.realIndex;
+
+    // 다시 첫 슬라이드로 돌아왔을 때
+    if (idx === 0 && firstVideo.paused) {
+        mainSwiper.autoplay.stop();
+        firstVideo.currentTime = 0;
+        firstVideo.play().catch(()=>{});
+    }
+});
+
+
+/* ============================================= new ======================================== */
+
 var newSwiper = new Swiper('.new_swiper', { 
     loop: false,
     autoplay: {
@@ -280,4 +322,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", scrollHorizontal);
     scrollHorizontal();
+});
+
+/* 바 광고 (오늘도착 시간) rec 섹션에서 사라지게 */
+const bar = document.querySelector('.bar_bnr');
+const hideSection = document.querySelector('.frame_section');
+
+window.addEventListener('scroll', () => {
+    const hidePoint = hideSection.offsetTop; // recomnd_section 시작점
+    const scroll = window.scrollY;
+
+    if(scroll + bar.offsetHeight >= hidePoint){
+        bar.style.opacity = 0;
+        bar.style.pointerEvents = 'none';
+    } else {
+        bar.style.opacity = 1;
+        bar.style.pointerEvents = 'auto';
+    }
 });

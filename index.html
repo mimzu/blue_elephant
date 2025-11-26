@@ -19,17 +19,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Mega:wght@100..900&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--플러그인 필수 css cdn 연결-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <!--플러그인 필수 JS cdn 연결-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/main.css">
     <script src="./script/index.js" defer></script>
     <!-- 스크롤 트리거 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js" defer></script>
 </head>
 <body>
     <header>
@@ -53,9 +52,10 @@
             <div class="swiper" id="main_swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
+                        <video class="main_video" src="./image/main_bnr_video2.mp4" autoplay muted playsinline></video>
                         <div class="main_bnr_contents">
-                            <h3>25 6th<br>campaign</h3>
-                            <h2>THREE</h2>
+                            <h3>"This is our sports"</h3>
+                            <h2>ACTIVE</h2>
                             <a href="" class="view_more_btn">View More</a>
                         </div>
                     </div>
@@ -68,8 +68,8 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="main_bnr_contents">
-                            <h3>25 6th<br>campaign</h3>
-                            <h2>THREE</h2>
+                            <h3>BEST</h3>
+                            <h2></h2>
                             <a href="" class="view_more_btn">View More</a>
                         </div>
                     </div>
@@ -77,8 +77,8 @@
                 <div class="swiper-pagination"></div>
             </div>
         </section>
+        <a href="" class="bar_bnr"><p>새벽 도착 주문 마감까지 <span id="countdown">00:01:14</span> 남았습니다.</p></a>
         <section class="best_section">
-            <a href="" class="bar_bnr"><p>새벽 도착 주문 마감까지 <span id="countdown">00:01:14</span> 남았습니다.</p></a>
             <div class="best_title">
                 <h3 class="title">Best</h3>
                 <button class="today_delivery" href="">
