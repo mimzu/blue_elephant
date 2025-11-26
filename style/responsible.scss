@@ -1,1 +1,140 @@
 @use './common.scss' as *;
+
+@media screen and (max-width:1240px) {
+    /* 전체 너비 가변형, 좌우 여백 몇?   40 */
+    header {
+        .header_left {display:none;}
+        .logo {
+            left:120px;
+            width: 200px; height: auto;
+            display:block;
+        }
+        .header_right {
+            display:none;
+        }
+        .header_right_m {
+            display:block;
+            position:absolute;
+            right:40px;
+        }
+    }
+    header.scroll {
+        display:block;
+        height: 45px;
+        .logo {
+            filter:invert(1); display:block;
+            width: 150px;
+            left:90px;
+            top:15px;
+        }
+        .header_right_m {
+            filter:invert(1);
+            top:10px;
+            right:15px;
+        }
+    }
+    .wrap {
+        .title {font-size:$font-size20;}
+        .product_title {font-size:$font-size14;}
+        .product_price {font-size:$font-size12;}
+        .view_more_btn  {font-size:$font-size12;}
+        .best_section {
+            .best_title {
+                .today_delivery {
+                    p {
+                        font-size:$font-size10;
+                    }
+                }
+            }
+            .best_menu {
+                li button {
+                    font-size:$font-size12;
+                }
+            }
+        }
+        .frame_section {
+            padding:80px 0;
+            display:flex; flex-flow:column nowrap;
+            justify-content: center;
+            align-items: center;
+            .frame_left {
+                width: max-content;
+                .frame_select {
+                    margin:40px 0;
+                    .frame_select_title {
+                        width: 100%;
+                        text-align: center;
+                        margin: 20px 0 10px;
+                        font-size:$font-size12;
+                    }
+                    ul {
+                        li {
+                            padding:5px 10px;
+                            button {
+                                width: 100px;
+                                font-size:$font-size10;
+                            }
+                        }
+                    }
+                }
+                .result_btn {
+                    font-size:$font-size12;
+                }
+            }
+            .frame_right {
+                padding:0 10px;
+                .frame_img_box {
+                    padding:100px 0;
+                    height: auto;
+                    p {font-size:$font-size10;}
+                }
+            }
+        }
+        .recomand_section {
+            flex-flow:column nowrap;
+            height: max-content;
+            p:nth-child(1) {
+                margin-top: 260px;
+            }
+            p {
+                font-size:$font-size12;
+            }
+            .shop_btn {
+                margin-bottom:50px;
+                font-size:$font-size12;
+            }
+        }
+        .about_section { height: 956px;
+            .container{
+                h5 {
+                    font-size:$font-size18;
+                }
+                p {font-size:$font-size12;}
+                .about_btn split {
+                    font-size:$font-size12;
+                    font-weight: 300;
+                }
+            }
+        }
+        .celeblities_section {
+            display:none;
+        }
+        .store_section {
+            padding:0 40px;
+            .title {margin: 40px 0;}
+            .stores_img {
+                flex-flow:column nowrap;
+                gap:20px;
+                li {height: 300px;}
+                .img_background {
+                    .store_content_hover {
+                        p {
+                            font-size:$font-size12;
+                            strong {font-size:$font-size10;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

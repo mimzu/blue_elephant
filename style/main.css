@@ -51,6 +51,9 @@ header .header_right li a img {
 header .header_right li a:hover {
   filter: invert(1);
 }
+header .header_right_m {
+  display: none;
+}
 
 header.scroll {
   background-color: #000;
@@ -103,6 +106,9 @@ header.scroll .header_right {
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide:nth-child(1) .main_video {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide:nth-child(2) {
   background-image: url("../image/main_bg1.png");
@@ -316,7 +322,7 @@ header.scroll .header_right {
   background-color: #3172FF;
 }
 .wrap .new_section {
-  padding: 100px 0;
+  padding: 0 0 100px;
   text-align: center;
 }
 .wrap .new_section .new_title { /* 공통 */
@@ -793,6 +799,149 @@ footer .bottom p {
   line-height: 150%;
   font-size: 0.75rem;
   font-weight: 300;
+}
+
+@media screen and (max-width: 1240px) {
+  /* 전체 너비 가변형, 좌우 여백 몇?   40 */
+  header .header_left {
+    display: none;
+  }
+  header .logo {
+    left: 120px;
+    width: 200px;
+    height: auto;
+    display: block;
+  }
+  header .header_right {
+    display: none;
+  }
+  header .header_right_m {
+    display: block;
+    position: absolute;
+    right: 40px;
+  }
+  header.scroll {
+    display: block;
+    height: 45px;
+  }
+  header.scroll .logo {
+    filter: invert(1);
+    display: block;
+    width: 150px;
+    left: 90px;
+    top: 15px;
+  }
+  header.scroll .header_right_m {
+    filter: invert(1);
+    top: 10px;
+    right: 15px;
+  }
+  .wrap .title {
+    font-size: 1.25rem;
+  }
+  .wrap .product_title {
+    font-size: 0.875rem;
+  }
+  .wrap .product_price {
+    font-size: 0.75rem;
+  }
+  .wrap .view_more_btn {
+    font-size: 0.75rem;
+  }
+  .wrap .best_section .best_title .today_delivery p {
+    font-size: 0.625rem;
+  }
+  .wrap .best_section .best_menu li button {
+    font-size: 0.75rem;
+  }
+  .wrap .frame_section {
+    padding: 80px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .frame_section .frame_left {
+    width: max-content;
+  }
+  .wrap .frame_section .frame_left .frame_select {
+    margin: 40px 0;
+  }
+  .wrap .frame_section .frame_left .frame_select .frame_select_title {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 0.75rem;
+  }
+  .wrap .frame_section .frame_left .frame_select ul li {
+    padding: 5px 10px;
+  }
+  .wrap .frame_section .frame_left .frame_select ul li button {
+    width: 100px;
+    font-size: 0.625rem;
+  }
+  .wrap .frame_section .frame_left .result_btn {
+    font-size: 0.75rem;
+  }
+  .wrap .frame_section .frame_right {
+    padding: 0 10px;
+  }
+  .wrap .frame_section .frame_right .frame_img_box {
+    padding: 100px 0;
+    height: auto;
+  }
+  .wrap .frame_section .frame_right .frame_img_box p {
+    font-size: 0.625rem;
+  }
+  .wrap .recomand_section {
+    flex-flow: column nowrap;
+    height: max-content;
+  }
+  .wrap .recomand_section p:nth-child(1) {
+    margin-top: 260px;
+  }
+  .wrap .recomand_section p {
+    font-size: 0.75rem;
+  }
+  .wrap .recomand_section .shop_btn {
+    margin-bottom: 50px;
+    font-size: 0.75rem;
+  }
+  .wrap .about_section {
+    height: 956px;
+  }
+  .wrap .about_section .container h5 {
+    font-size: 1.125rem;
+  }
+  .wrap .about_section .container p {
+    font-size: 0.75rem;
+  }
+  .wrap .about_section .container .about_btn split {
+    font-size: 0.75rem;
+    font-weight: 300;
+  }
+  .wrap .celeblities_section {
+    display: none;
+  }
+  .wrap .store_section {
+    padding: 0 40px;
+  }
+  .wrap .store_section .title {
+    margin: 40px 0;
+  }
+  .wrap .store_section .stores_img {
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  .wrap .store_section .stores_img li {
+    height: 300px;
+  }
+  .wrap .store_section .stores_img .img_background .store_content_hover p {
+    font-size: 0.75rem;
+  }
+  .wrap .store_section .stores_img .img_background .store_content_hover p strong {
+    font-size: 0.625rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
