@@ -160,6 +160,7 @@ header.scroll .header_right {
   background-color: #999;
   width: 100px;
   height: 1px;
+  border-radius: 0px;
 }
 .wrap .main_bnr #main_swiper .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #fff;
@@ -847,6 +848,9 @@ footer .bottom p {
   }
   .wrap .view_more_btn {
     font-size: 0.75rem;
+  }
+  .wrap .main_bnr #main_swiper {
+    height: 750px;
   }
   .wrap .best_section .best_title .today_delivery p {
     font-size: 0.625rem;

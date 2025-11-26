@@ -38,6 +38,11 @@
         .product_title {font-size:$font-size14;}
         .product_price {font-size:$font-size12;}
         .view_more_btn  {font-size:$font-size12;}
+        .main_bnr {
+            #main_swiper {
+                height: 750px;
+            }
+        }
         .best_section {
             .best_title {
                 .today_delivery {
