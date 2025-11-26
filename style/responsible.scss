@@ -141,5 +141,22 @@
                 }
             }
         }
+    }footer {
+        margin-top:40px;
+        padding:30px 10px;
+        .top {
+            flex-flow:column nowrap;
+            gap:20px;
+            dt {font-size:$font-size10;}
+            dd {font-size:0.5rem;}
+            .logo {img {width: 150px;;}}
+            .top_right {gap:20px}
+            margin-bottom:40px;
+        }
+        .bottom {
+            p {
+                font-size:0.5rem;
+            }
+        }
     }
 }

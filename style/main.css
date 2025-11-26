@@ -93,6 +93,7 @@ header.scroll .header_right {
   padding: 15px 20px;
   background-color: #fff;
   font-weight: 350;
+  display: inline-block;
 }
 .wrap .main_bnr #main_swiper {
   height: 950px;
@@ -148,6 +149,7 @@ header.scroll .header_right {
   padding: 15px 20px;
   background-color: #fff;
   font-weight: 350;
+  display: inline-block;
 }
 .wrap .main_bnr #main_swiper .swiper-wrapper .swiper-slide .main_bnr_contents a:hover {
   background-color: #3172FF;
@@ -314,6 +316,7 @@ header.scroll .header_right {
   padding: 15px 20px;
   background-color: #fff;
   font-weight: 350;
+  display: inline-block;
   background-color: #999;
   color: #fff;
   font-weight: 300;
@@ -433,6 +436,7 @@ header.scroll .header_right {
   background-color: #fff;
   font-weight: 350;
   display: inline-block;
+  display: inline-block;
   min-width: max-content;
 }
 .wrap .frame_section .frame_left .result_btn:hover {
@@ -533,6 +537,7 @@ header.scroll .header_right {
   background-color: #fff;
   font-weight: 350;
   display: inline-block;
+  display: inline-block;
   background-color: #000;
   color: #fff;
 }
@@ -606,6 +611,7 @@ header.scroll .header_right {
   padding: 15px 20px;
   background-color: #fff;
   font-weight: 350;
+  display: inline-block;
   margin-top: 50px;
   display: inline-block;
   color: #000;
@@ -733,6 +739,7 @@ header.scroll .header_right {
   padding: 15px 20px;
   background-color: #fff;
   font-weight: 350;
+  display: inline-block;
   background-color: #999;
   color: #fff;
 }
@@ -945,6 +952,32 @@ footer .bottom p {
   }
   .wrap .store_section .stores_img .img_background .store_content_hover p strong {
     font-size: 0.625rem;
+  }
+  footer {
+    margin-top: 40px;
+    padding: 30px 10px;
+  }
+  footer .top {
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  footer .top dt {
+    font-size: 0.625rem;
+  }
+  footer .top dd {
+    font-size: 0.5rem;
+  }
+  footer .top .logo img {
+    width: 150px;
+  }
+  footer .top .top_right {
+    gap: 20px;
+  }
+  footer .top {
+    margin-bottom: 40px;
+  }
+  footer .bottom p {
+    font-size: 0.5rem;
   }
 }
 
