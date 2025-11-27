@@ -1,5 +1,8 @@
 @use './common.scss' as *;
 
+
+body {overflow-x:hidden;}
+
 header {padding: 20px; position:fixed;
     top:0; left:0; width: 100%; z-index: 990; 
     @include flexrow;
@@ -157,12 +160,14 @@ header.scroll {
                         text-align: center;
                         margin-right:1px;
                         a {display:inline-block;
-                            img {width: 100%; height: auto;}
-                            .product_title {@include product_title; margin: 15px 0 5px;}
-                            .product_price {@include product_price}
+                            img {width: 100%; height: auto; 
+                                border: 1px solid transparent; 
+                                transition: border-color 0.3s;}
+                            .product_title {@include product_title; margin: 15px 0 5px; transition:color 0.3s;}
+                            .product_price {@include product_price;  transition:color 0.3s;}
                         }
                         a:hover {
-                            img {border:1px solid $color-point-blue}
+                            img {border:1px solid $color-point-blue;}
                             .product_title {color:$color-point-blue}
                             .product_price {color:$color-point-blue}
                         }

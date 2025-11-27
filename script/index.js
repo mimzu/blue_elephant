@@ -298,6 +298,7 @@ document.querySelectorAll('a').forEach(a => {
 });
 
 
+
 /* 셀러브리티 섹션 */
 document.addEventListener("DOMContentLoaded", () => {
     const section = document.querySelector(".celeblities_section");
@@ -323,6 +324,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", scrollHorizontal);
     scrollHorizontal();
 });
+
+
 
 /* 바 광고 (오늘도착 시간) rec 섹션에서 사라지게 */
 const bar = document.querySelector('.bar_bnr');

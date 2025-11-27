@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  overflow-x: hidden;
+}
+
 header {
   padding: 20px;
   position: fixed;
@@ -281,15 +285,19 @@ header.scroll .header_right {
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a img {
   width: 100%;
   height: auto;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a .product_title {
   font-size: 0.875rem;
   font-weight: 600;
   margin: 15px 0 5px;
+  transition: color 0.3s;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a .product_price {
   font-size: 0.75rem;
   font-weight: 300;
+  transition: color 0.3s;
 }
 .wrap .best_section .best_swiper_wrap #best_swiper .swiper-wrapper .swiper-slide a:hover img {
   border: 1px solid #3172FF;
